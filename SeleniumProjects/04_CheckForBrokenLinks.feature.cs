@@ -70,14 +70,14 @@ namespace SeleniumProjects
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Check for broken Links", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Check for broken Linksss", new string[] {
                 "mytag"}, SourceLine=3)]
-        public virtual void CheckForBrokenLinks()
+        public virtual void CheckForBrokenLinksss()
         {
             string[] tagsOfScenario = new string[] {
                     "mytag"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check for broken Links", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check for broken Linksss", null, tagsOfScenario, argumentsOfScenario);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
