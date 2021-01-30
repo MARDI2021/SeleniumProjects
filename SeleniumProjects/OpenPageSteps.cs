@@ -40,7 +40,7 @@ namespace SeleniumProjects
         {
           
             Assert.That(driver1.Title, Is.EqualTo("The Internet"));
-           driver1.Quit(); 
+            driver1.Quit(); 
 
         }
     }
