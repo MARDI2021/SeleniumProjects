@@ -25,44 +25,28 @@ namespace SeleniumProjects
        public static IWebDriver driverChrome = new ChromeDriver();
        public static IWebDriver driverFox = new FirefoxDriver();
        public static IWebDriver driverIE = new InternetExplorerDriver();
-        // public static IWebDriver driverEdge = new EdgeDriver();
-        EdgeOptions options = new EdgeOptions();
-
-
-        // Launch Microsoft Edge (Chromium)
-
-
+       public static EdgeOptions options = new EdgeOptions();
+       
 
         [Given(@"a webpage exists")]
         public void GivenAWebpageExists()
         {
-
-
-
-            options.UseChromium = true;
-           
-            driverChrome = new ChromeDriver();
+          options.UseChromium = true;
+          driverChrome = new ChromeDriver();
           driverFox = new FirefoxDriver();
           driverIE = new InternetExplorerDriver();
-          //driverEdge = new EdgeDriver();
+           
 
             ChromeDriverService chromeservice = ChromeDriverService.CreateDefaultService(@"C:\AUTOMATION2020\Projects", "chromedriver.exe");
             FirefoxDriverService service = FirefoxDriverService.CreateDefaultService(@"C:\AUTOMATION2020\Projects", "geckodriver.exe");
             InternetExplorerDriverService InternetDriverservice = InternetExplorerDriverService.CreateDefaultService(@"C:\AUTOMATION2020\Projects", "IEDriverServer.exe");
             EdgeDriverService edgeservice = EdgeDriverService.CreateDefaultService(@"C:\AUTOMATION2020\Projects", "msedgedriver.exe");
-            
-
-
-
-
-
+           
         }
 
         [When(@"i open the webpage in different browsers")]
         public void WhenIOpenTheWebpageInDifferentBrowsers()
         {
-
-
            var driverEdge = new EdgeDriver(options);
            driverChrome.Manage().Window.Size = new System.Drawing.Size(1000, 899);
            driverChrome.Navigate().GoToUrl("http://the-internet.herokuapp.com/");
@@ -70,6 +54,7 @@ namespace SeleniumProjects
            driverFox.Navigate().GoToUrl("http://the-internet.herokuapp.com/");
            driverIE.Navigate().GoToUrl("http://the-internet.herokuapp.com/");
            driverEdge.Navigate().GoToUrl("http://the-internet.herokuapp.com/");
+           driverEdge.Close();
 
         }
         
@@ -79,9 +64,13 @@ namespace SeleniumProjects
            driverChrome.Close();
            driverFox.Close();
            driverIE.Close();
+            
         }
+      
     }
+    
 }
+
 
 
 
